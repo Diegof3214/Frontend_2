@@ -13,7 +13,7 @@ const AuthContextProvider = ({ children }) => {
         const storedAccessToken = localStorage.getItem("accessToken");
         if (storedAccessToken) {
           setAccessToken(storedAccessToken);
-          const response = await axios.get("http://127.0.0.1:8000/api/user/check-auth/", {
+          const response = await axios.get(`${import.meta.env.VITE_ENDPOINT_BASE}/api/user/check-auth/`, {
             headers: {
               Authorization: `Bearer ${storedAccessToken}`
             }
