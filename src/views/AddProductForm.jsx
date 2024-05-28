@@ -63,7 +63,7 @@ const AddProductModal = ({ isOpen, onClose, onAddProduct }) => {
             : updatedFormData.review;
         updatedFormData.review = reviewArray;
         const response = await fetch(
-          "http://127.0.0.1:8000/api/products/create",
+          `${import.meta.env.VITE_ENDPOINT_BASE}/products/create`,
           {
             method: "POST",
             headers: {
