@@ -12,7 +12,7 @@ export default function Home() {
   console.log(shared);
 
   const { data, error, isLoading } = useData(
-    `http://127.0.0.1:8000/api/products/all`
+    `${import.meta.env.VITE_ENDPOINT_BASE}/products/all`
   );
   if (isLoading) return <p>Cargando...</p>;
   if (error) return <p>Error: {error.message}</p>;
